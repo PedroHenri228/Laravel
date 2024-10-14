@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(50)->create();
+        User::factory(10)->create();
 
         User::query()->inRandomOrder()->limit(10)->get()->each(function (User $u) {
              Tasks::factory()->create(['from_user' => $u->id]);
