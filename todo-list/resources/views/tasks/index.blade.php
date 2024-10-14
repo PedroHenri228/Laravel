@@ -19,7 +19,7 @@
             <td>{{ $task->title }}</td>
             <td>{{ $task->description }}</td>
             <td>{{ $task->ends_at }}</td>
-            <td><a href=""></a></td>
+            <td><a href="{{ route('tasks.show', $task->id) }}">Ver Tarefas</a></td>
             <!-- Outras colunas -->
         </tr>
         @endforeach

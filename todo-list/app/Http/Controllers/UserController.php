@@ -14,5 +14,17 @@ class UserController extends Controller
         return view('users.index', compact('users'));
     }
 
+    public function get_id($id) {
+        $users = User::find($id);
+
+        if (!$users) {
+            return redirect()->route('users.index')->with('error', 'Tarefa não encontrada');
+        }
+    
+        // Retorna a view com a tarefa
+        return view('users.show', compact('users'));
+
+    }
+
 
 }

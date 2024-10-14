@@ -15,6 +15,11 @@ class ListController extends Controller
 
         return view('tasks.index', compact('tasks'));
 
+    }
 
+    public function show($id) {
+        $tasks = Tasks::find($id);
+
+        return view('tasks.show', compact('tasks'));
     }
 }

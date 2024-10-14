@@ -6,6 +6,7 @@
                 <th>Nome</th>
                 <th>E-mail</th>
                 <th>Senha</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -15,9 +16,14 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->password }}</td>
+                    <td>
+                        <!-- Corrigir o uso de route() -->
+                        <a href="{{ route('users.show', $user->id) }}">Ver Usuário</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
+
 
     </table>
 </div>
