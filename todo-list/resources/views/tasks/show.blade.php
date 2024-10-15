@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Detalhes do Usuario</h1>
+    <h1>Detalhes da Tarefa</h1>
 
     <table class="table">
         <thead>

@@ -16,7 +16,7 @@
                 <td>{{ $task->end_at }}</td>
                 <td>
                     <!-- Link para visualizar o usuário -->
-                    <a href="{{ route('tasks.show', $task->id) }}">Ver Usuário</a>
+                    <a href="{{ route('tasks.show', $task->id) }}">Ver Tarefa</a>
 
                     <!-- Formulário para deletar o usuário -->
                     <form action="{{ route('tasks.delete', $task->id) }}" method="POST" style="display:inline;">
