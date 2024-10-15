@@ -1,29 +1,31 @@
-<div>
-    <!-- resources/views/tasks/index.blade.php -->
-
 <table>
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Titulo</th>
+            <th>Idetificação</th>
+            <th>Título</th>
             <th>Descrição</th>
             <th>Conclusão</th>
-            <th>Ações</th>
-            <!-- Outras colunas -->
         </tr>
     </thead>
     <tbody>
-        @foreach($tasks as $task)
-        <tr>
-            <td>{{ $task->id }}</td>
-            <td>{{ $task->title }}</td>
-            <td>{{ $task->description }}</td>
-            <td>{{ $task->ends_at }}</td>
-            <td><a href="{{ route('tasks.show', $task->id) }}">Ver Tarefas</a></td>
-            <!-- Outras colunas -->
-        </tr>
+        @foreach ($tasks as $task)
+            <tr>
+                <td>{{ $task->id }}</td>
+                <td>{{ $task->title }}</td>
+                <td>{{ $task->description }}</td>
+                <td>{{ $task->end_at }}</td>
+                <td>
+                    <!-- Link para visualizar o usuário -->
+                    <a href="{{ route('tasks.show', $task->id) }}">Ver Usuário</a>
+
+                    <!-- Formulário para deletar o usuário -->
+                    <form action="{{ route('tasks.delete', $task->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('Tem certeza que deseja deletar este usuário?')">Deletar</button>
+                    </form>
+                </td>
+            </tr>
         @endforeach
     </tbody>
 </table>
-
-</div>

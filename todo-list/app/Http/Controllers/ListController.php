@@ -22,4 +22,19 @@ class ListController extends Controller
 
         return view('tasks.show', compact('tasks'));
     }
+
+
+    public function deleted($id) {
+
+        $tasks = Tasks::find($id);
+
+        if(!$tasks) {
+            return redirect()->route('tasks.index')->with('erro', 'Usuário não encontrado');
+        }
+
+        $tasks->delete();
+
+        return redirect()->route('tasks.index')->with('success', 'Usuário deletado com sucesso');
+
+    }
 }

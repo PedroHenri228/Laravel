@@ -9,4 +9,5 @@ Route::get('/tasks', [ListController::class, 'index'])->name('tasks.index');
 Route::get('/tasks/{id}', [ListController::class, 'show'])->name('tasks.show');
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/users/{id}', [UserController::class, 'get_id'])->name('users.show');
+Route::delete('tasks/{id}', [ListController::class, 'deleted'])->name('tasks.delete');
 require __DIR__.'/auth.php';
