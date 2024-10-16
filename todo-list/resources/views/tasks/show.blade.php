@@ -1,24 +1,17 @@
 <div class="container">
     <h1>Detalhes da Tarefa</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Título</th>
-                <th>Descrição</th>
-                <th>Conclusão</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ $tasks->id }}</td>
-                <td>{{ $tasks->title }}</td>
-                <td>{{ $tasks->description }}</td>
-                <td>{{ $tasks->ends_at }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <form action="{{ route('tasks.updated', $tasks->id) }}" method="post">
+        @csrf
+        <input type="text" name="title" value="{{ $tasks->title }}">
+        <br>
+        <input type="text" name="description" value="{{ $tasks->description }}">
+        <br>
+        <input type="datetime" name="ends_at" value="{{ $tasks->ends_at }}">
+
+        <button type="submit">Editar</button>
+    </form>
+
 
     <a href="{{ route('tasks.index') }}">Voltar para a lista de tarefas</a>
 </div>

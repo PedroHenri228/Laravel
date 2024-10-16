@@ -10,4 +10,5 @@ Route::get('/tasks/{id}', [ListController::class, 'show'])->name('tasks.show');
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/users/{id}', [UserController::class, 'get_id'])->name('users.show');
 Route::delete('tasks/{id}', [ListController::class, 'deleted'])->name('tasks.delete');
+Route::post('tasks/{id}/update', [ListController::class, 'update'])->name('tasks.updated');
 require __DIR__.'/auth.php';

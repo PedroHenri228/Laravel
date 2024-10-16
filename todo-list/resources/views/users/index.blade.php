@@ -17,7 +17,7 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->password }}</td>
                     <td>
-                        <!-- Corrigir o uso de route() -->
+                       
                         <a href="{{ route('users.show', $user->id) }}">Ver Usuário</a>
                     </td>
                 </tr>

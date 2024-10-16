@@ -5,6 +5,7 @@
             <th>Título</th>
             <th>Descrição</th>
             <th>Conclusão</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -13,12 +14,10 @@
                 <td>{{ $task->id }}</td>
                 <td>{{ $task->title }}</td>
                 <td>{{ $task->description }}</td>
-                <td>{{ $task->end_at }}</td>
+                <td>{{ $task->ends_at }}</td>
                 <td>
-                    <!-- Link para visualizar o usuário -->
-                    <a href="{{ route('tasks.show', $task->id) }}">Ver Tarefa</a>
+                    <button onclick="window.location.href='{{ route('tasks.show', $task->id) }}'">Editar</button>
 
-                    <!-- Formulário para deletar o usuário -->
                     <form action="{{ route('tasks.delete', $task->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
