@@ -18,13 +18,14 @@ class UserController extends Controller
         $users = User::find($id);
 
         if (!$users) {
-            return redirect()->route('users.index')->with('error', 'Tarefa não encontrada');
+            return redirect()->route('users.index')->with('error', 'Usuario não encontrado');
         }
-    
+
         // Retorna a view com a tarefa
         return view('users.show', compact('users'));
 
     }
+
 
 
 }
